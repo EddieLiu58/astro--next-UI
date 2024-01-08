@@ -1,6 +1,10 @@
 ---
 import {Button,Badge, Avatar} from '@nextui-org/react';
 import Default from '@layouts/Default.astro';
+import CustomCard from '@components/CustomCard.jsx';
+import CustomBlurredCard from '@components/CustomBlurredCard.jsx';
+import CustomDropDown from '@components/CustomDropDown.jsx';
+import CustomModal from '@components/CustomModal.jsx';
 ---
 
 <Default title="Home Page">
@@ -38,4 +42,16 @@ import Default from '@layouts/Default.astro';
 			/>
 		  </Badge>
 	</div>
+	<div class="mt-4 flex h-full w-full not-prose justify-start items-center">
+		<CustomCard client:only/>
+	</div>
+	<div class="mt-4 flex h-full w-full not-prose justify-start items-center">
+		<CustomBlurredCard client:only/>
+	</div>
+  <div class="mt-4">
+    <CustomDropDown client:only/>
+  </div>
+  <div class="mt-4">
+    <CustomModal client:only/>
+  </div>
 </Default>
