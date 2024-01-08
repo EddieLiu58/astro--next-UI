@@ -8,14 +8,23 @@ export default {
 	],
 	theme: {
 		extend: {
-			colors: { white: "#FFFFFF", black: "#000000", focus: "#BEF264" },
+			colors: {
+				white: "#FFFFFF",
+				black: "#000000",
+				focus: "#BEF264",
+				primary: {
+					//... 50 to 900
+					foreground: "#FFFFFF",
+					DEFAULT: "#e6591d",
+				},
+			},
 		},
 	},
 	darkMode: "class",
 	plugins: [
 		nextui({
-			addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
-			defaultTheme: "light", // default theme from the themes object
+			addCommonColors: true, // override common colors (e.g. "blue", "green", "pink").
+			defaultTheme: "dark", // default theme from the themes object
 			layout: {
 				spacingUnit: 4, // in px
 			},

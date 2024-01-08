@@ -1,31 +1,41 @@
 ---
-import {Button} from '@nextui-org/react';
+import {Button,Badge, Avatar} from '@nextui-org/react';
 import Default from '@layouts/Default.astro';
 ---
 
 <Default title="Home Page">
 	<h1 class="text-red-600">Astro</h1>
 	<div class="flex flex-wrap gap-4 items-center">
-		<Button color="primary" variant="solid" client:only>
+		<Button color="default" variant="solid" client:only>
 			Solid
 		</Button>
 		<Button color="primary" variant="faded" client:only>
 			Faded
 		</Button>
-		<Button color="primary" variant="bordered" client:only>
+		<Button color="secondary" variant="bordered" client:only>
 			Bordered
 		</Button>
-		<Button color="primary" variant="light" client:only>
+		<Button color="success" variant="light" client:only>
 			Light
 		</Button>
-		<Button color="primary" variant="flat" client:only>
+		<Button color="warning" variant="flat" client:only>
 			Flat
 		</Button>
-		<Button color="primary" variant="ghost" client:only>
+		<Button color="danger" variant="ghost" client:only>
 			Ghost
 		</Button>
 		<Button color="primary" variant="shadow" client:only>
 			Shadow
 		</Button>
+	</div>
+	<div class="pt-4">
+		<Badge content="5" color="primary" client:only>
+			<Avatar
+			  radius="md"
+			  size="lg"
+			  src="https://i.pravatar.cc/300?u=a042581f4e29026709d"
+			  client:only
+			/>
+		  </Badge>
 	</div>
 </Default>
