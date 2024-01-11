@@ -1,15 +1,38 @@
 ---
 const { title } = Astro.props;
+import NavBar from '@components/header/NavBar.jsx';
 ---
-<html lang="en" class="">
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+      return 'light';
+  })();
+
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+  }
+
+  window.localStorage.setItem('theme', theme);
+
+</script>
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <article class="px-unit-4">
+    <main class="text-foreground bg-background px-unit-4">
+      <NavBar client:only />
       <h1>{title}</h1>
       <slot /> <!-- your content is injected here -->
-    </article>
+    </main>
   </body>
 </html>

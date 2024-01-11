@@ -24,7 +24,6 @@ export default {
 	plugins: [
 		nextui({
 			addCommonColors: true, // override common colors (e.g. "blue", "green", "pink").
-			defaultTheme: "light", // default theme from the themes object
 			layout: {
 				spacingUnit: 4, // in px
 			},
