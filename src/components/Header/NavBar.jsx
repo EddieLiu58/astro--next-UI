@@ -11,7 +11,11 @@ import ThemeModeSwitch from "@components/ThemeMode/Switch.jsx";
 
 export default function CustomNavbar() {
 	return (
-		<Navbar maxWidth={"full"}>
+		<Navbar
+			maxWidth={"full"}
+			shouldHideOnScroll
+			className="bg-zinc-200 dark:bg-zinc-900"
+		>
 			<NavbarBrand>
 				<AcmeLogo />
 				<p className="font-bold text-inherit">ACME</p>

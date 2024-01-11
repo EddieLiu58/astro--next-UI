@@ -12,13 +12,12 @@ export default function ThemeModeSwitch() {
 	// change dark mode
 	const handleToggleClick = () => {
 		element.classList.toggle("dark");
-
-		const isDark = element.classList.contains("dark");
-		localStorage.setItem("theme", isDark ? "dark" : "light");
+		localStorage.setItem("theme", defaultDark ? "dark" : "light");
 	};
 
 	useEffect(() => {
 		if (defaultDark) {
+			console.log("check mode");
 			setIsSelected();
 		}
 	}, []);
